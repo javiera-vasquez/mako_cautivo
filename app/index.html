@@ -17,7 +17,7 @@
     <!-- build:css styles/main.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/vendor/modernizr.js -->
     <script src="/bower_components/modernizr/modernizr.js"></script>
     <!-- endbuild -->
@@ -26,44 +26,140 @@
     <!--[if lt IE 10]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
+
     <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active"><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-        <h3 class="text-muted">mako_cautivo</h3>
-      </div>
 
-      <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="#">Splendid!</a></p>
-      </div>
+      <div id="header">
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-          
-          <h4>Sass</h4>
-          <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-          
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
-          
+            <div class="clearfix">
+              <div id="logo">
+                <a href=""><img src="../images/vtr.png" title="VTR.com" class="img-responsive"></a>
+              </div>
+              <div class="right">
+                <a href="#" class="btn btn-vtr">Seguir a VTR.com <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+              </div>
+            </div>
+
+            <div id="ribbon" class="clearfix">
+              <a href="#" class="right"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Configuración</a>
+            </div>
+
+          </div>
         </div>
       </div>
+      <!-- end header -->
 
-      <div class="footer">
-        <p>♥ from the Yeoman team</p>
+      <div id="content">
+
+        <div class="row">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <h4 class="second-lvl">Hola <strong>Cristina Silva</strong></h4>
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="status status-alert clearfix">
+              <div class="left icon">
+                <span class="glyphicon glyphicon-alert" aria-hidden="true"></span>
+              </div>
+              <div class="left list">
+                <ul class="">
+                  <li class="">Tu boleta está vencida.</li>
+                  <li class="">Ha finalizado tu cuota de consumo de datos, necesitas comprar una bolsa para seguir navegando.</li>
+                </ul>
+              </div>
+            </div>
+            <!-- end status -->
+          </div>
+        </div>
+        <!-- end first level -->
+
+        <div id="box">
+          <div class="row header">
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <h3>Plan de Banda Ancha Fijo</h3>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+              <p>22 de julio, 2015 <br><span>Dirección:</span> Guillermo Acuña 2891, Providencia</p>
+            </div>
+          </div>
+          <!-- end top level -->
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4">
+
+              <div class="panel panel-default">
+                <div class="panel-heading">Información de tu plan</div>
+                <div class="panel-body">
+                  <h4>Plan: Mega 200/ 100GB</h4>
+                  <p class="legend" >Estado de Velocidad: <span data-toggle="tooltip" title="<strong>Estado de Velocidad</strong><br><br>Cuando se acaba la cuota de tu plan la velocidad baja de Máxima a Mínima. Debes contratar una bolsa para que la velocidad vuelva al estado Máximo.">Máxima <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></span></p>
+                  <ul class="list-unstyled">
+                    <li>Velocidad de subida: <span>200 Mbps</span></li>
+                    <li>Velocidad de bajada: <span>10 Mbps</span></li>
+                    <li>Cuota: <span>100GB</span></li>
+                  </ul>
+                </div>
+              </div>
+
+              <div class="panel panel-default alert-box">
+                <div class="panel-heading">Contrata Bolsas de datos</div>
+                <div class="panel-body">
+
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Mega 200 cuota 100GB $19990
+                    </label>
+                  </div>
+                  <p class="legend">Duración: 3 meses</p>
+
+                  <div class="checkbox">
+                    <label>
+                      <input type="checkbox"> Tipo de bolsa B $4990
+                    </label>
+                  </div>
+                  <p class="legend">Duración: 3 meses</p>
+
+                  <a href="#" class="btn btn-go right">¡Lo quiero! <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                </div>
+              </div>
+
+            </div>
+            <!-- end left col -->
+            <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
+
+              <div class="panel panel-default alert-box">
+                <div class="panel-heading">Resumen del mes</div>
+                <div class="panel-body">
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+            <!-- end right col -->
+          </div>
+        </div>
+
       </div>
+      <!-- end content -->
     </div>
-    
+    <!-- end container -->
+
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
       (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
@@ -79,7 +175,7 @@
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/plugins.js -->
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
@@ -94,7 +190,7 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
     <!-- endbuild -->
-    
+
     <!-- build:js scripts/main.js -->
     <script src="scripts/main.js"></script>
     <!-- endbuild -->

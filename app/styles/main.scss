@@ -11,83 +11,212 @@ $icon-font-path: '../fonts/';
   padding: 0.2em 0;
 }
 
-/* Space out content a bit */
-body {
-  padding-top: 20px;
-  padding-bottom: 20px;
+@font-face {
+  font-family: 'NeoSans';
+  src: url('../fonts/neosansstd-regular-webfont.eot');
+  src: url('../fonts/neosansstd-regular-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/neosansstd-regular-webfont.woff') format('woff'), url('../fonts/neosansstd-regular-webfont.ttf') format('truetype'), url('../fonts/neosansstd-regular-webfont.svg#NeoSansStdRegular') format('svg');
+  font-weight: normal;
+  font-style: normal;
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
+@font-face {
+  font-family: 'NeoSans';
+  src: url('../fonts/neosansstd-medium-webfont.eot');
+  src: url('../fonts/neosansstd-medium-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/neosansstd-medium-webfont.woff') format('woff'), url('../fonts/neosansstd-medium-webfont.ttf') format('truetype'), url('../fonts/neosansstd-medium-webfont.svg#NeoSansStdMedium') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+// Basic setting
+@mixin bold {font-weight: 600;}
+@mixin normal {font-weight: normal;}
+
+@mixin neo {font-family: 'NeoSans', sans-serif;}
+@mixin light {font-weight: 100;}
+@mixin light-2 {font-weight: 200;}
+
+@mixin left {float: left !important;}
+@mixin right {float: right !important;}
+
+@mixin radius($radius:0) {border-radius: $radius;}
+
+.left {@include left;}
+.right {@include right;}
+
+// Color variables
+$white: #fff;
+$black: #000;
+$ccc: #ccc;
+
+// Basic
+$primary: #2298b4;
+$secondary: #66acb3;
+$tooltip: #aed477;
+$ribbon: #838383;
+$light: #ebebec;
+$asset: #f54363;
+
+// Alerts
+$good: #3BA656;
+$bad: #D05050;
+$alert: #f2d84b;
+$red: $bad;
+
+/* Base reset of bootstrap */
+body, h1, h2, h3, h4, h5, h5 {
+    @include bold;
+    @include neo;
+}
+
+/* Space out content a bit */
+body {
+  @include normal;
+  padding: 3em 0;
+  background: url(../images/bg.jpg);
+  background-size: cover;
+  // background-repeat: no-repeat;
+}
+
+/* Button logic */
+@mixin button-base($padding: 0.65em 1em, $radius: 0) {
+  padding: $padding;
+  border-radius: $radius;
+}
+
+@mixin button($bg-colog: $ribbon, $color: $white, $font-size: 14px) {
+  background-color: $bg-colog;
+  color: $color;
+  font-size: $font-size;
+  &:hover {
+    color: $color;
+    background-color: darken($bg-colog, 10%);
+  }
+}
+
+.btn {
+  @include button-base;
+  @include button;
 }
 
 /* Custom page header */
-.header {
-  border-bottom: 1px solid #e5e5e5;
-
-  /* Make the masthead heading the same height as the navigation */
-  h3 {
-    margin-top: 0;
-    margin-bottom: 0;
-    line-height: 40px;
-    padding-bottom: 19px;
+#header {
+  #logo {
+    background-color: $black;
+    width: 100px;
+    position: absolute;
+    padding: 1.5em 1em;
+  }
+  .btn-vtr {
+    @include button(darken($ribbon, 15%), $font-size: 13px);
+    margin-bottom: 15px;
   }
 }
 
-/* Custom page footer */
-.footer {
-  padding-top: 19px;
-  color: #777;
-  border-top: 1px solid #e5e5e5;
-}
-
-.container-narrow > hr {
-  margin: 30px 0;
-}
-
-/* Main marketing message and sign up button */
-.jumbotron {
-  text-align: center;
-  border-bottom: 1px solid #e5e5e5;
-  .btn {
-    font-size: 21px;
-    padding: 14px 24px;
+#ribbon {
+  background-color: $ribbon;
+  a {
+    color: $white;
+    padding: 0.5em 1em;
+    &:hover {
+      background-color: darken($ribbon, 10%);
+      text-decoration: none;
+    }
   }
 }
 
-/* Supporting marketing content */
-.marketing {
-  margin: 40px 0;
-  p + h4 {
-    margin-top: 28px;
+/* Custom page content */
+#content {
+  background: $white;
+  padding-bottom: 0.5em;
+  .second-lvl {
+    @include normal;
+    margin-left: 120px;
+    margin-top: 25px;
   }
 }
+
+/* Status and alert of the page */
+.status {
+  // border: 1px solid $ccc;
+  background-color: $light;
+  min-height: 100px;
+  margin: 0 1em;
+  .icon {
+    background-color: $asset;
+    height: 100px;
+    width: 40px;
+    .glyphicon {
+      color: $white;
+      font-size: 16px;
+      margin-left: 11px;
+      margin-top: 42px;
+    }
+  }
+  .list {
+    position: absolute;
+    left: 100px;
+    top: 0;
+    ul {
+      margin: 25px 50px 0 0;
+      padding: 0;
+      li {
+        color: darken($ribbon, 10%);
+      }
+    }
+  }
+}
+
+#box {
+  border: 1px solid $ccc;
+  margin: 1em 1em 0.5em;
+  padding: 1em 1em 0.5em;
+  .header {
+    padding: 0.25em;
+    h3 {
+      margin: 5px 0 0;
+      color: $primary;
+    }
+    p {
+      text-align: right;
+      font-size: 13px;
+      span {color: $primary;}
+    }
+  }
+}
+
+/* Panels of the dashboard */
+.panel {
+  @include radius;
+  box-shadow: 0 1px 0 $light;
+}
+
+/* Tooltip */
+.tooltip.top {
+  .tooltip-inner {
+    color: $primary;
+    background-color: $white;
+    max-width: 300px;
+    padding: 15px;
+    text-align: left;
+    font-size: 13px;
+    border: 3px solid $primary;
+    strong {
+      font-size: 15px;
+    }
+  }
+  .tooltip-arrow {
+    border-top-color: $primary;
+    margin-left: -10px;
+    border-width: 10px 10px 0;
+    bottom: -5px;
+  }
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   .container {
-    max-width: 730px;
+    // max-width: 730px;
   }
-
-  /* Remove the padding we set earlier */
-  .header,
-  .marketing,
-  .footer {
-    padding-left: 0;
-    padding-right: 0;
-  }
-
-  /* Space out the masthead */
-  .header {
-    margin-bottom: 30px;
-  }
-
-  /* Remove the bottom border on the jumbotron for visual effect */
-  .jumbotron {
-    border-bottom: 0;
-  }
+  .status {margin-top: 1em}
 }
