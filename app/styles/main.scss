@@ -208,15 +208,32 @@ body {
   }
 }
 
-.alert-box .panel-heading {
+.alert-box {
+  min-height: 360px;
+  .panel-heading {
   background-color: $asset;
   color: $white;
+  }
 }
 
 /* Form style for a panel */
 #form-login, #form-bag {
+  animation-duration: 0.5s;
+  animation-delay: 0;
   /* select bag */
-
+  .checkbox {
+    font-size: 14px;
+    margin-bottom: 0;
+    label {color: $primary;}
+    span {
+      @include bold;
+      color: $black;
+    }
+  }
+  .legend {
+    margin-bottom: 15px;
+    margin-left: 20px,
+  }
   /* login */
   .primary {
     color: $asset;
@@ -238,6 +255,12 @@ body {
     bottom: -15px;
     font-size: 15px,
   }
+}
+
+#form-bag .btn-go {
+  position: absolute;
+  bottom: 40px;
+  right: 35px;
 }
 
 /* Tooltip */
