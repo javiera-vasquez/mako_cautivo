@@ -50,7 +50,7 @@ $ccc: #ccc;
 
 // Basic
 $primary: #2298b4;
-$secondary: #66acb3;
+$secondary: #f88325;
 $tooltip: #aed477;
 $ribbon: #838383;
 $light: #ebebec;
@@ -71,9 +71,10 @@ body, h1, h2, h3, h4, h5, h5 {
 /* Space out content a bit */
 body {
   @include normal;
-  padding: 3em 0;
+  padding: 2em 0;
   background: url(../images/bg.jpg);
   background-size: cover;
+  // font-size: 14px;
   // background-repeat: no-repeat;
 }
 
@@ -205,6 +206,9 @@ body {
     .legend span, .list-unstyled span {
       color: $primary;
     }
+    .legend span.orange {
+      color: $secondary;
+    }
   }
 }
 
@@ -263,6 +267,29 @@ body {
   right: 35px;
 }
 
+/* Bags */
+.bags-loop {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  .bag {
+    @include left;
+    width: 30%;
+    margin-right: 2.5%;
+    background: $light;
+    text-align: center;
+    padding: 1.5em 0;
+    &:last-child {
+      margin-left: 5%;
+      margin-right: 0;
+      background-color: $primary;
+      color: $white;
+    }
+  }
+  .bag.orange {
+    background-color: $secondary;
+  }
+}
+
 /* Tooltip */
 .tooltip.top {
   .tooltip-inner {
@@ -285,11 +312,57 @@ body {
   }
 }
 
+/* Modal windows */
+.modal-content {
+  @include radius;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.modal-body {
+  padding: 20px;
+  h4 {margin: 10px 0 30px;}
+  .close-window {
+    text-align: right;
+    margin: 0;
+    span {padding: 10px;}
+  }
+  .moth {
+    margin-bottom: 20px;
+    .row {margin-bottom: 15px;}
+    h5 {
+      background-color: $light;
+      color: darken($ribbon, 20%);
+      padding: 10px 15px;
+    }
+    p {
+      margin: 0 15px;
+      span {color: $primary;}
+    }
+    .title {
+      @include bold;
+      font-size: 15px;
+      margin-bottom: 5px;
+    }
+  }
+}
+
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  .container {
-    // max-width: 730px;
-  }
   .status {margin-top: 1em}
+  .bags-box {
+    // height: 600px;
+    .col-lg-6:first-child{
+      min-height: 525px;
+      border-right: 1px solid $ccc;
+    }
+    .bags-resume {
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      .right {
+        margin-right: 40px;
+      }
+    }
+  }
 }

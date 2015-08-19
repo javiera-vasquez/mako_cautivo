@@ -44,7 +44,7 @@
             </div>
 
             <div id="ribbon" class="clearfix">
-              <a href="#" class="right"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Configuración</a>
+              <a href="#" class="modal-config-open right"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Configuración</a>
             </div>
 
           </div>
@@ -145,26 +145,58 @@
             <!-- end left col -->
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 
-              <div class="panel panel-default">
+              <div class="panel panel-default bags-box">
                 <div class="panel-heading">Resumen del mes</div>
                 <div class="panel-body">
                   <div class="row">
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      <h4>Plan</h4>
+                      <p class="legend">Consumo hasta hoy: <span class="orange">100 GB</span> de <span class="orange">100 GB</span></p>
+
+                      <div class="row bags-loop">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <div class="bag">Bajada<br>75 GB</div>
+                          <div class="bag">Subida<br>75 GB</div>
+                          <div class="bag orange">Restante<br>0 GB</div>
+                        </div>
+                      </div>
+                      <!-- end loop of bags -->
+
+                      <ul class="list-unstyled">
+                        <li>Detalle de período 24 junio a 24 de julio</li>
+                      </ul>
+
+                      <div class="bags-resume">
+                        <div class="clearfix">
+                          <p class="left">Tu consumo total del mes:</p>
+                          <p class="right" data-toggle="tooltip" title="<strong>Consumo Total del Mes</strong><br><br>El consumo total del mes es la suma de los GB que has consumido de tu plan y de las bolsas que has contratado."><strong>105,2 GB</strong> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></p>
+                        </div>
+                      </div>
                     </div>
+                    <!-- end left -->
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-                      cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                      proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                      <div class="clearfix">
+                        <h4 class="left">Bolsas</h4>
+                        <a href="#" class="right modal-purchase-open"><span>></span> Ver todas las bolsas</a>
+                      </div>
+                      <p class="legend">Consumo hasta hoy: <span class="">100 GB</span> de <span class="">100 GB</span></p>
+
+                      <div class="row bags-loop">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                          <div class="bag">Bajada<br>75 GB</div>
+                          <div class="bag">Subida<br>75 GB</div>
+                          <div class="bag">Restante<br>0 GB</div>
+                        </div>
+                      </div>
+                      <!-- end loop of bags -->
+
+                      <ul class="list-unstyled">
+                        <li><span>Mega 200 cuota 100GB</span><li>
+                        <li>Fecha activación: <span>15 de julio</span></li>
+                        <li>Se vence el <span>15 de octubre</span></li>
+                      </ul>
                     </div>
+                    <!-- end right -->
                   </div>
                 </div>
               </div>
@@ -178,6 +210,85 @@
       <!-- end content -->
     </div>
     <!-- end container -->
+
+    <!-- modal windows for config panel -->
+    <div id="config-modal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-body">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <p>One fine body&hellip;</p>
+          </div>
+
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+    <!-- modal windows for purchase history -->
+    <div id="purchase-modal" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-body">
+
+            <p class="close-window"><span data-dismiss="modal">Cerrar</span></p>
+            <h4>Bolsas contratadas en los últimos 6 meses</h4>
+
+            <div class="moth">
+              <h5>Julio</h5>
+              <div class="row">
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                  <p class="title"><span>Mega 200 cuota 100GB</span></p>
+                  <p>$19.900</p>
+                  <p>Fecha compra: 15 de julio</p>
+                </div>
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                  <p>Estado: <span>Activa</span></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                  <p class="title"><span>Tipo de bolsa B</span></p>
+                  <p>$19.900</p>
+                  <p>Fecha compra: 14 de julio</p>
+                </div>
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                  <p>Estado: Consumida</p>
+                </div>
+              </div>
+            </div>
+            <!-- end moth -->
+
+            <div class="moth">
+              <h5>Junio</h5>
+              <div class="row">
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                  <p class="title">No compraste bolsas</p>
+                </div>
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5"></div>
+              </div>
+            </div>
+            <!-- end moth -->
+
+            <div class="moth">
+              <h5>Mayo</h5>
+              <div class="row">
+                <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
+                  <p class="title">Tipo de bolsa B</p>
+                  <p>$19.900</p>
+                  <p>Fecha compra: 14 de julio</p>
+                </div>
+                <div class="col-xs-5 col-sm-5 col-md-5 col-lg-5">
+                  <p>Estado: Consumida</p>
+                </div>
+              </div>
+            </div>
+            <!-- end moth -->
+
+          </div>
+        </div><!-- /.modal-content -->
+      </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>
