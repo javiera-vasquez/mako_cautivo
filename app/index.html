@@ -11,6 +11,7 @@
 
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
+    <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -104,21 +105,39 @@
                 <div class="panel-heading">Contrata Bolsas de datos</div>
                 <div class="panel-body">
 
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> Mega 200 cuota 100GB $19990
-                    </label>
+                  <div id="form-bag">
+                    <div class="checkbox clearfix">
+                      <label><input type="checkbox"> Mega 200 cuota 100GB</label>
+                      <span>$19990</span>
+                    </div>
+                    <p class="legend">Duración: 3 meses</p>
+                    <div class="checkbox clearfix">
+                      <label><input type="checkbox"> Tipo de bolsa B</label>
+                      <span>$4990</span>
+                    </div>
+                    <p class="legend">Duración: 3 meses</p>
+                    <div class="clearfix">
+                      <a href="#" class="btn btn-go right">¡Lo quiero! <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                    </div>
                   </div>
-                  <p class="legend">Duración: 3 meses</p>
 
-                  <div class="checkbox">
-                    <label>
-                      <input type="checkbox"> Tipo de bolsa B $4990
-                    </label>
+                  <div id="form-login">
+                    <h4 class="primary">Para activar el servicio necesitas identificarte</h4>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Email o RUT</label>
+                      <input type="text" class="form-control" id="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Contraseña</label>
+                      <input type="password" class="form-control" id="" placeholder="">
+                    </div>
+                    <p class="help-block"><a href="#">Solicita o recupera tu clave</a></p>
+                    <div class="clearfix">
+                      <a href="#" class="btn btn-go left">Iniciar sesión <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                      <a href="#" class="right back-form">Cerrar</a>
+                    </div>
                   </div>
-                  <p class="legend">Duración: 3 meses</p>
 
-                  <a href="#" class="btn btn-go right">¡Lo quiero! <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
                 </div>
               </div>
 
@@ -126,7 +145,7 @@
             <!-- end left col -->
             <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 
-              <div class="panel panel-default alert-box">
+              <div class="panel panel-default">
                 <div class="panel-heading">Resumen del mes</div>
                 <div class="panel-body">
                   <div class="row">

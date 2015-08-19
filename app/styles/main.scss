@@ -190,6 +190,56 @@ body {
   box-shadow: 0 1px 0 $light;
 }
 
+.panel-default {
+  .panel-heading {
+    color: darken($ribbon, 10%);
+    font-size: 14px;
+  }
+  .panel-body {
+    color: lighten($black, 25%);
+    h4 {
+      color: $black;
+      font-size: 16px;
+      margin-bottom: 15px;
+    }
+    .legend span, .list-unstyled span {
+      color: $primary;
+    }
+  }
+}
+
+.alert-box .panel-heading {
+  background-color: $asset;
+  color: $white;
+}
+
+/* Form style for a panel */
+#form-login, #form-bag {
+  /* select bag */
+
+  /* login */
+  .primary {
+    color: $asset;
+  }
+  .form-control {background-color: $light;}
+  .help-block {
+    font-size: 13px;
+    margin-bottom: 20px;
+    a {
+      text-decoration: underline;
+      color: $ribbon;
+      &:hover {color: $primary}
+    }
+  }
+  .btn-go{@include button($asset, $white);}
+  .back-form {
+    @extend .help-block;
+    position: relative;
+    bottom: -15px;
+    font-size: 15px,
+  }
+}
+
 /* Tooltip */
 .tooltip.top {
   .tooltip-inner {
