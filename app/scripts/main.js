@@ -10,11 +10,10 @@ $(function () {
 	});
 	$('.modal-config-open').on('click', function(){
 		$('#config-modal').modal();
-	})
-	$('#purchase-modal').modal('show');
+	});
 	$('.modal-purchase-open').on('click', function(){
 		$('#purchase-modal').modal();
-	})
+	});
 	// Animate the bag form
 	$('#form-bag .btn-go').on('click', function(){
 		$('#form-bag').addClass('hidden');

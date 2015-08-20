@@ -77,10 +77,10 @@
 
         <div id="box">
           <div class="row header">
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
               <h3>Plan de Banda Ancha Fijo</h3>
             </div>
-            <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
               <p>22 de julio, 2015 <br><span>Dirección:</span> Guillermo Acuña 2891, Providencia</p>
             </div>
           </div>
@@ -215,12 +215,48 @@
     <div id="config-modal" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
-
           <div class="modal-body">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            <p>One fine body&hellip;</p>
-          </div>
 
+            <h4>Configuración</h4>
+            <div class="config-panel">
+              <form class="form-horizontal">
+                <div class="form-group">
+                  <label for="inputEmail3" class="col-sm-5 control-label">Email</label>
+                  <div class="col-sm-7">
+                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword3" class="col-sm-6 control-label">Número de celular</label>
+                  <div class="col-sm-6">
+                    <input type="text" class="form-control" id="inputPassword3" placeholder="Password">
+                  </div>
+                </div>
+                <br>
+                <div class="form-group">
+                  <div class="col-sm-12">
+                    <p><strong>¿Cuándo quieres recibir notificaciones?</strong></p>
+                    <div class="checkbox">
+                      <label><input type="checkbox"> Al <strong>50%</strong> de mi cuota consumida.</label><br/>
+                      <label><input type="checkbox"> Al <strong>75%</strong> de mi cuota consumida.</label><br/>
+                      <label><input type="checkbox"> Al <strong>90%</strong> de mi cuota consumida.</label><br/>
+                      <label><input type="checkbox"> Al <strong>95%</strong> de mi cuota consumida.</label><br/>
+                      <label><input type="checkbox"> Al <strong>99%</strong> de mi cuota consumida.</label><br/>
+                      <label><input type="checkbox"> Al <strong>100%</strong> de mi cuota consumida.</label>
+                    </div>
+                    <p class="legend">Puedes seleccionar mas de una notificación</p>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <!-- end config-panel -->
+
+            <p class="buttons-config">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+              <button type="button" class="btn btn-go">Guardar</button>
+            </p>
+
+          </div>
         </div><!-- /.modal-content -->
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
@@ -274,7 +310,7 @@
               <h5>Mayo</h5>
               <div class="row">
                 <div class="col-xs-7 col-sm-7 col-md-7 col-lg-7">
-                  <p class="title">Tipo de bolsa B</p>
+                  <p class="title"><span>Tipo de bolsa B</span></p>
                   <p>$19.900</p>
                   <p>Fecha compra: 14 de julio</p>
                 </div>

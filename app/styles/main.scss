@@ -78,6 +78,8 @@ body {
   // background-repeat: no-repeat;
 }
 
+.container {min-width: 320px;}
+
 /* Button logic */
 @mixin button-base($padding: 0.65em 1em, $radius: 0) {
   padding: $padding;
@@ -140,11 +142,11 @@ body {
 .status {
   // border: 1px solid $ccc;
   background-color: $light;
-  min-height: 100px;
+  min-height: 150px;
   margin: 0 1em;
   .icon {
     background-color: $asset;
-    height: 100px;
+    height: 150px;
     width: 40px;
     .glyphicon {
       color: $white;
@@ -176,6 +178,8 @@ body {
     h3 {
       margin: 5px 0 0;
       color: $primary;
+      text-align: center;
+      margin-bottom: 1em;
     }
     p {
       text-align: right;
@@ -202,6 +206,14 @@ body {
       color: $black;
       font-size: 16px;
       margin-bottom: 15px;
+    }
+    .modal-purchase-open {
+      color: lighten($black, 25%);
+      margin-top: 5px;
+      span {
+        @include bold;
+        color: $primary;
+      }
     }
     .legend span, .list-unstyled span {
       color: $primary;
@@ -290,6 +302,18 @@ body {
   }
 }
 
+.bags-box {
+  .col-lg-6:first-child{
+    border-bottom: 1px solid $ccc;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+  }
+  .bags-resume {
+    margin-top: 2em;
+    .right {@include left;}
+  }
+}
+
 /* Tooltip */
 .tooltip.top {
   .tooltip-inner {
@@ -312,6 +336,40 @@ body {
   }
 }
 
+// Configuration panel for login and setting
+.config-panel {
+  background-color: $light;
+  padding: 3em 3em 2em;
+  margin-bottom: 2em;
+  .form-group {
+    p {font-size: 16px;}
+    p.legend {
+      margin-top: 20px;
+      margin-bottom: 0;
+      font-size: 13px;
+      color: $ribbon;
+    }
+    label {
+      text-align: left;
+      font-size: 16px;
+    }
+    input {text-align: right;}
+  }
+}
+
+.buttons-config {
+  text-align: center;
+  .btn {@include button-base(0.75em 2em);}
+  .btn-default {
+    @include button($primary, $white);
+    border-color: transparent;
+    margin-right: 20px;
+  }
+  .btn-go {
+    @include button($asset, $white);
+  }
+}
+
 /* Modal windows */
 .modal-content {
   @include radius;
@@ -322,9 +380,14 @@ body {
   padding: 20px;
   h4 {margin: 10px 0 30px;}
   .close-window {
-    text-align: right;
     margin: 0;
+    text-align: right;
+    cursor: pointer;
     span {padding: 10px;}
+    &:hover {
+      color: $primary;
+      text-decoration: underline;
+    }
   }
   .moth {
     margin-bottom: 20px;
@@ -347,22 +410,45 @@ body {
 }
 
 
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  .status {margin-top: 1em}
+/* Media querys */
+@media (min-width: $screen-xs-min) {
+   /* rules for mobile horizontal (480 > 768)  */
+
+}
+@media (min-width: $screen-sm-min) {
+   /* rules for tablet (768 > 992) */
+  #box .header {
+    h3 {text-align: left;}
+  }
+}
+@media (min-width: $screen-md-min) {
+   /* rules for desktop (992 > 1200) */
+  .status {
+    margin-top: 1em;
+    min-height: 100px;
+    .icon {height: 100px;}
+  }
   .bags-box {
     // height: 600px;
     .col-lg-6:first-child{
       min-height: 525px;
       border-right: 1px solid $ccc;
+      border-bottom: 0px solid transparent;
+      margin-bottom: 0;
+      padding-bottom: 0;
     }
     .bags-resume {
       width: 100%;
       position: absolute;
       bottom: 0;
       .right {
+        @include right;
         margin-right: 40px;
       }
     }
   }
 }
+@media (min-width: $screen-lg-min) {
+   /* rules for large (> 1200) */
+}
+
