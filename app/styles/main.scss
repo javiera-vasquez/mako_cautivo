@@ -142,6 +142,21 @@ body {
   }
 }
 
+.intro-login {
+  text-align: center;
+  padding: 3em 0 2em;
+  h3 {
+    color: $primary;
+    margin-bottom: 1em;
+    font-size: 25px;
+  }
+  h4 {
+    @include normal;
+    line-height: 1.4;
+    font-size: 16px;
+  }
+}
+
 /* Status and alert of the page */
 .status {
   // border: 1px solid $ccc;
@@ -426,6 +441,11 @@ body {
 }
 @media (min-width: $screen-md-min) {
    /* rules for desktop (992 > 1200) */
+  .intro-login {
+    padding: 2em 0 1em;
+    h3 {font-size: 30px;}
+    h4 {font-size: 20px;}
+  }
   .status {
     margin-top: 1em;
     min-height: 100px;
