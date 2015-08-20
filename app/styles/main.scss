@@ -103,6 +103,9 @@ body {
 
 /* Custom page header */
 #header {
+  .top-lvl {
+    height: 55px;
+  }
   #logo {
     background-color: $black;
     width: 100px;
@@ -117,6 +120,7 @@ body {
 
 #ribbon {
   background-color: $ribbon;
+  height: 35px;
   a {
     color: $white;
     padding: 0.5em 1em;
@@ -410,10 +414,9 @@ body {
 }
 
 
-/* Media querys */
+/* Media queries */
 @media (min-width: $screen-xs-min) {
    /* rules for mobile horizontal (480 > 768)  */
-
 }
 @media (min-width: $screen-sm-min) {
    /* rules for tablet (768 > 992) */
