@@ -76,6 +76,10 @@ body {
   background-size: cover;
   // font-size: 14px;
   // background-repeat: no-repeat;
+  a {
+    color: $primary;
+    &:hover {color: darken($primary, 10%);}
+  }
 }
 
 .container {min-width: 320px;}
@@ -319,6 +323,9 @@ body {
   .bag.orange {
     background-color: $secondary;
   }
+  .bag.grey {
+    background-color: $ribbon;
+  }
 }
 
 .bags-box {
@@ -328,37 +335,42 @@ body {
     padding-bottom: 2em;
   }
   .bags-resume {
-    margin-top: 2em;
-    .right {@include left;}
+    border-top: 1px solid $ccc;
+    padding: 1em 0 0;
+    p {margin: 0;}
+    // margin-top: 2em;
+    // .right {@include left;}
   }
 }
 
-/* Tooltip */
-.tooltip.top {
-  .tooltip-inner {
-    color: $primary;
+/* popover */
+.popover {
+  color: $primary;
+  border: 3px solid $primary;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  .popover-title {
     background-color: $white;
-    max-width: 300px;
-    padding: 15px;
-    text-align: left;
-    font-size: 13px;
-    border: 3px solid $primary;
-    strong {
-      font-size: 15px;
-    }
+    padding: 10px 14px;
+    font-size: 14px;
   }
-  .tooltip-arrow {
-    border-top-color: $primary;
-    margin-left: -10px;
-    border-width: 10px 10px 0;
-    bottom: -5px;
+  .popover-content {
+    padding: 10px 14px;
+    font-size: 13px;
+  }
+}
+
+.popover.top > .arrow {
+  border-top-color: $primary;
+  &:after {
+    bottom: 4px;
+    border-top-color: $white;
   }
 }
 
 // Configuration panel for login and setting
 .config-panel {
   background-color: $light;
-  padding: 3em 3em 2em;
+  padding: 1em;
   margin-bottom: 2em;
   .form-group {
     p {font-size: 16px;}
@@ -454,19 +466,19 @@ body {
   .bags-box {
     // height: 600px;
     .col-lg-6:first-child{
-      min-height: 525px;
+      min-height: 485px;
       border-right: 1px solid $ccc;
       border-bottom: 0px solid transparent;
       margin-bottom: 0;
       padding-bottom: 0;
     }
     .bags-resume {
-      width: 100%;
-      position: absolute;
-      bottom: 0;
+      // width: 100%;
+      // position: absolute;
+      // bottom: 0;
       .right {
-        @include right;
-        margin-right: 40px;
+        // @include right;
+        // margin-right: 40px;
       }
     }
   }

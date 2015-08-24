@@ -4,9 +4,9 @@
 // Document ready
 $(function () {
 	// Init modal and tooltip for the app
-	$('[data-toggle="tooltip"]').tooltip({
+	$('[data-toggle="popover"]').popover({
 		placement: 'top',
-		html: 'true'
+		trigger: 'focus'
 	});
 	$('.modal-config-open').on('click', function(){
 		$('#config-modal').modal();

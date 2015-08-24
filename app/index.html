@@ -92,7 +92,10 @@
                 <div class="panel-heading">Información de tu plan</div>
                 <div class="panel-body">
                   <h4>Plan: Mega 200/ 100GB</h4>
-                  <p class="legend" >Estado de Velocidad: <span data-toggle="tooltip" title="<strong>Estado de Velocidad</strong><br><br>Cuando se acaba la cuota de tu plan la velocidad baja de Máxima a Mínima. Debes contratar una bolsa para que la velocidad vuelva al estado Máximo.">Máxima <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></span></p>
+                  <p class="legend" >
+                    Estado de Velocidad:
+                    <a tabindex="0" class="" role="button" data-toggle="popover" title="Estado de Velocidad" data-content="Cuando se acaba la cuota de tu plan la velocidad baja de Máxima a Mínima. Debes contratar una bolsa para que la velocidad vuelva al estado Máximo.">Máxima <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+                  </p>
                   <ul class="list-unstyled">
                     <li>Velocidad de subida: <span>200 Mbps</span></li>
                     <li>Velocidad de bajada: <span>10 Mbps</span></li>
@@ -101,7 +104,7 @@
                 </div>
               </div>
 
-              <div class="panel panel-default alert-box">
+              <div class="panel panel-default alert-box hidden-xs hidden-sm">
                 <div class="panel-heading">Contrata Bolsas de datos</div>
                 <div class="panel-body">
 
@@ -165,13 +168,6 @@
                       <ul class="list-unstyled">
                         <li>Detalle de período 24 junio a 24 de julio</li>
                       </ul>
-
-                      <div class="bags-resume">
-                        <div class="clearfix">
-                          <p class="left">Tu consumo total del mes:</p>
-                          <p class="right" data-toggle="tooltip" title="<strong>Consumo Total del Mes</strong><br><br>El consumo total del mes es la suma de los GB que has consumido de tu plan y de las bolsas que has contratado."><strong>105,2 GB</strong> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></p>
-                        </div>
-                      </div>
                     </div>
                     <!-- end left -->
                     <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
@@ -198,8 +194,60 @@
                     </div>
                     <!-- end right -->
                   </div>
+                  <div class="row">
+                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                      <div class="bags-resume">
+                        <div class="clearfix">
+                          <p class="left">Tu consumo total del mes:</p>
+                          <a tabindex="0" class="right" role="button" data-toggle="popover" title="Consumo Total del Me" data-content="consumo total del mes es la suma de los GB que has consumido de tu plan y de las bolsas que has contratado."><strong>105,2 GB</strong> <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
+              <!-- end panel of bags -->
+
+              <div class="panel panel-default alert-box hidden-md hidden-lg">
+                <div class="panel-heading">Contrata Bolsas de datos</div>
+                <div class="panel-body">
+
+                  <div id="form-bag" class="show">
+                    <div class="checkbox clearfix">
+                      <label><input type="checkbox"> Mega 200 cuota 100GB</label>
+                      <span class="right">$19990</span>
+                    </div>
+                    <p class="legend">Duración: 3 meses</p>
+                    <div class="checkbox clearfix">
+                      <label><input type="checkbox"> Tipo de bolsa B</label>
+                      <span class="right">$4990</span>
+                    </div>
+                    <p class="legend">Duración: 3 meses</p>
+                    <div class="clearfix">
+                      <a href="#" class="btn btn-go right">¡Lo quiero! <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                    </div>
+                  </div>
+
+                  <div id="form-login" class="hidden">
+                    <h4 class="primary">Para activar el servicio necesitas identificarte</h4>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Email o RUT</label>
+                      <input type="text" class="form-control" id="" placeholder="">
+                    </div>
+                    <div class="form-group">
+                      <label for="exampleInputPassword1">Contraseña</label>
+                      <input type="password" class="form-control" id="" placeholder="">
+                    </div>
+                    <p class="help-block"><a href="#">Solicita o recupera tu clave</a></p>
+                    <div class="clearfix">
+                      <a href="#" class="btn btn-go left">Iniciar sesión <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
+                      <a href="#" class="right back-form">Cerrar</a>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+              <!-- end panel of buy bag for small screen -->
 
             </div>
             <!-- end right col -->
