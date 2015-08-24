@@ -390,11 +390,13 @@ body {
 
 .buttons-config {
   text-align: center;
-  .btn {@include button-base(0.75em 2em);}
+  .btn {
+    @include button-base(0.75em 2em);
+    margin: 0 0 1em;
+  }
   .btn-default {
     @include button($primary, $white);
     border-color: transparent;
-    margin-right: 20px;
   }
   .btn-go {
     @include button($asset, $white);
@@ -444,12 +446,14 @@ body {
 /* Media queries */
 @media (min-width: $screen-xs-min) {
    /* rules for mobile horizontal (480 > 768)  */
+   .buttons-config .btn{margin: 0 1em;}
 }
 @media (min-width: $screen-sm-min) {
    /* rules for tablet (768 > 992) */
   #box .header {
     h3 {text-align: left;}
   }
+  .buttons-config .btn{margin: 0 1.5em;}
 }
 @media (min-width: $screen-md-min) {
    /* rules for desktop (992 > 1200) */
