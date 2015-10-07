@@ -47,6 +47,7 @@ $icon-font-path: '../fonts/';
 $white: #fff;
 $black: #000;
 $ccc: #ccc;
+$header : #333;
 
 // Basic
 $primary: #2298b4;
@@ -139,10 +140,15 @@ body {
 #content {
   background: $white;
   padding-bottom: 0.5em;
+  // z-index: -2;
+  // position: relative;
   .second-lvl {
     @include normal;
     margin-left: 120px;
     margin-top: 25px;
+  }
+  .plan-info {
+    margin: 0 2em;
   }
 }
 
@@ -163,243 +169,300 @@ body {
 
 /* Status and alert of the page */
 .status {
-  // border: 1px solid $ccc;
+  margin: 2em 0;
   background-color: $light;
-  min-height: 150px;
-  margin: 0 1em;
+  display: flex;
   .icon {
     background-color: $asset;
-    height: 150px;
     width: 40px;
+    padding-top: 30px;
+    margin: 0 auto;
     .glyphicon {
       color: $white;
       font-size: 16px;
       margin-left: 11px;
-      margin-top: 42px;
+      // margin-top: -30%;
     }
   }
   .list {
-    position: absolute;
-    left: 100px;
-    top: 0;
+    width: 97%;
     ul {
-      margin: 25px 50px 0 0;
-      padding: 0;
+      padding: 20px;
+      margin-bottom: 0;
       li {
         color: darken($ribbon, 10%);
+        text-indent: -1em;
+        margin-left: .75em;
+        &:before {
+          content: "• ";
+          color: $asset;
+          padding-right: 0.5em;
+        }
+        a {
+          color: $asset;
+          text-decoration: underline;
+        }
       }
     }
   }
 }
 
-#box {
-  border: 1px solid $ccc;
-  margin: 1em 1em 0.5em;
-  padding: 1em 1em 0.5em;
-  .header {
-    padding: 0.25em;
-    h3 {
-      margin: 5px 0 0;
-      color: $primary;
-      text-align: center;
-      margin-bottom: 1em;
-    }
-    p {
-      text-align: right;
-      font-size: 13px;
-      span {color: $primary;}
+/* #Plan-status */
+#plan-status, #bag-list {
+  margin: 0 2em;
+  .box {
+    border: 1px solid $ccc;
+    padding: 0.5em 1em;
+    margin-bottom: 2em;
+  }
+  h4 {
+    margin-bottom: 1.5em;
+  }
+  ul li {
+    margin-bottom: 10px;
+  }
+  .panel {
+    position: relative;
+    padding-top: 15px;
+    bottom: 2%;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    border-color: transparent;
+    box-shadow: none;
+    .panel-body {
+      font-size: 12px;
+      padding: 10px;
+      background-color: #e5e5e5;
     }
   }
 }
 
-/* Panels of the dashboard */
-.panel {
-  @include radius;
-  box-shadow: 0 1px 0 $light;
-}
-
-.panel-default {
-  .panel-heading {
-    color: darken($ribbon, 10%);
-    font-size: 14px;
+#plan-status .box {
+  // min-height: 350px;
+  position: relative;
+  background: linear-gradient(to bottom, rgba($ccc, .5) 1%, rgba($white, 1) 5%);
+  &:after {
+    z-index: -1;
+    position: absolute;
+    content: "";
+    bottom: 12px;
+    right: 5px;
+    left: auto;
+    width: 50%;
+    top: 80%;
+    max-width: 300px;
+    background: $white;
+    box-shadow: 0 15px 10px rgba($black, .25);
+    transform: rotate(3deg);
   }
-  .panel-body {
-    color: lighten($black, 25%);
-    h4 {
-      color: $black;
-      font-size: 16px;
-      margin-bottom: 15px;
-    }
-    .modal-purchase-open {
-      color: lighten($black, 25%);
-      margin-top: 5px;
-      span {
-        @include bold;
-        color: $primary;
-      }
-    }
-    .legend span, .list-unstyled span {
-      color: $primary;
-    }
-    .legend span.orange {
-      color: $secondary;
+  h4 {
+    margin-left: 15px;
+  }
+  .dot {
+    position: absolute;
+    left: 10px;
+    height: 10px;
+    width: 10px;
+    margin-top: 3px;
+    border-radius: 10px;
+    background: linear-gradient(to bottom, #fea905, #ff7005);
+    background-color: #fea905;
+  }
+  .number {
+    font-size: 18px;
+    margin-top: -5px;
+    text-decoration: underline;
+    a {
+      color: $header;
+      &:hover {color: $asset;}
     }
   }
-}
-
-.alert-box {
-  min-height: 360px;
-  .panel-heading {
-  background-color: $asset;
-  color: $white;
-  }
-}
-
-/* Form style for a panel */
-#form-login, #form-bag {
-  animation-duration: 0.5s;
-  animation-delay: 0;
-  /* select bag */
-  .checkbox {
-    font-size: 14px;
-    margin-bottom: 0;
-    label {color: $primary;}
-    span {
-      @include bold;
-      color: $black;
-    }
+  .calc-result p{
+    margin: 0;
+    line-height: 1;
+    font-size: 16px;
+    span {color: lighten($black, 50%)}
+    small {font-size: 12px;}
   }
   .legend {
-    margin-bottom: 15px;
-    margin-left: 20px,
+    font-size: 12px;
+    color: lighten($black, 50%);
   }
-  /* login */
-  .primary {
-    color: $asset;
+  .modal-config-open {
+    height: 20px;
+    width: 103px;
+    cursor: pointer;
   }
-  .form-control {background-color: $light;}
-  .help-block {
-    font-size: 13px;
-    margin-bottom: 20px;
-    a {
-      text-decoration: underline;
-      color: $ribbon;
-      &:hover {color: $primary}
-    }
-  }
-  .btn-go{@include button($asset, $white);}
-  .back-form {
-    @extend .help-block;
-    position: relative;
-    bottom: -15px;
-    font-size: 15px,
+  a {
+    color: $header;
+    text-decoration: underline;
+    cursor: pointer;
+    &:hover {color: $asset;}
   }
 }
 
-#form-bag .btn-go {
-  position: absolute;
-  bottom: 40px;
-  right: 35px;
-}
-
-/* Bags */
-.bags-loop {
-  margin-top: 2em;
-  margin-bottom: 2em;
+#bag-list .box {
   .bag {
-    @include left;
-    width: 30%;
-    margin-right: 2.5%;
-    background: $light;
+    margin-bottom: 10px;
+    img {margin: 0 auto;}
+  }
+  h3 {
+    text-align: right;
+  }
+  .legend {
     text-align: center;
-    padding: 1.5em 0;
-    &:last-child {
-      margin-left: 5%;
-      margin-right: 0;
-      background-color: $primary;
-      color: $white;
-    }
+    font-size: 12px;
+    margin-bottom: 1em;
   }
-  .bag.orange {
-    background-color: $secondary;
-  }
-  .bag.grey {
-    background-color: $ribbon;
+  .buy {
+    width: 180px;
+    height: 20px;
+    cursor: pointer;
+    img {margin-top: 5px;}
   }
 }
 
-.bags-box {
-  .col-lg-6:first-child{
-    border-bottom: 1px solid $ccc;
-    margin-bottom: 2em;
-    padding-bottom: 2em;
+.bar-progress {
+  margin-bottom: 5px;
+  height: 30px;
+  position: relative;
+  .overflow {
+    border-radius: 2px;
+    position: absolute;
+    height: 30px;
+    bottom: 0;
+    left: 0;
+    display: block;
+    background-size: 1000px;
+    transition: all 0.5s cubic-bezier(0.59,-0.02, 0.35, 0.97);
   }
-  .bags-resume {
-    border-top: 1px solid $ccc;
-    padding: 1em 0 0;
-    p {margin: 0;}
-    // margin-top: 2em;
-    // .right {@include left;}
+  .progress-bar-base {
+    border-radius: 2px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: inline-block;
+    width: 100%;
+    height: 30px;
+    background-color: rgba($black, 0.1);
+  }
+  .overflow.gradient {
+    background-image: linear-gradient(to right, rgba(#02b89c, 1) 35%,rgba(#fb9701, 1) 75%, rgba(#ff534e, 1) 100%);
+  }
+  .overflow.blue {
+    background-color: #6dcff5;
   }
 }
 
-/* popover */
+/* Popovers */
 .popover {
-  color: $primary;
-  border: 3px solid $primary;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  min-width: 250px;
+  @include radius;
+  background-color: #e6e6e6;
   .popover-title {
-    background-color: $white;
-    padding: 10px 14px;
-    font-size: 14px;
+    background-color: transparent;
+    border-color: transparent;
+    padding-bottom: 0;
   }
   .popover-content {
-    padding: 10px 14px;
-    font-size: 13px;
+    font-size: 12px;
   }
 }
 
-.popover.top > .arrow {
-  border-top-color: $primary;
-  &:after {
-    bottom: 4px;
-    border-top-color: $white;
-  }
+.popover.bottom > .arrow:after {
+  border-bottom-color: #e6e6e6;
 }
 
-// Configuration panel for login and setting
-.config-panel {
-  background-color: $light;
-  padding: 1em;
-  margin-bottom: 2em;
-  .form-group {
-    p {font-size: 16px;}
-    p.legend {
-      margin-top: 20px;
+#plan-status {
+  .popover.popover-bag {
+    min-width: auto;
+    .popover-title {
+      padding: 1em 1em 0.25em;
       margin-bottom: 0;
-      font-size: 13px;
-      color: $ribbon;
+      font-size: 14px;
+      text-align: center;
+      .close {
+        color: $asset;
+        opacity: 0.75;
+        &:hover {opacity: 1;}
+      }
     }
-    label {
+    .bag-loop {
+      margin-bottom: 25px;
+      h5 {font-size: 15px;}
+      ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        li {
+          line-height: 1;
+          margin-bottom: 5px;
+          span {color: $asset;}
+        }
+      }
+    }
+    .popover-content div:nth-child(+n+2) {
+      opacity: .5;
+    }
+    .modal-purchase-open {
+      cursor: pointer;
+      font-size: 12px;
+      color: $black;
+      text-decoration: underline;
+      &:hover {color: $asset}
+    }
+  }
+  .popover.popover-info {
+    .popover-title {
+      padding: 1em 1em 0.25em;
+      margin-bottom: 0;
+      font-size: 14px;
       text-align: left;
-      font-size: 16px;
+      color: $header;
+      .close {
+        color: $asset;
+        opacity: 0.75;
+        &:hover {opacity: 1;}
+      }
     }
-    input {text-align: right;}
-  }
-}
-
-.buttons-config {
-  text-align: center;
-  .btn {
-    @include button-base(0.75em 2em);
-    margin: 0 0 1em;
-  }
-  .btn-default {
-    @include button($primary, $white);
-    border-color: transparent;
-  }
-  .btn-go {
-    @include button($asset, $white);
+    ul {
+      padding: 0;
+      margin: 0 0 15px;
+      list-style: none;
+      li {
+        line-height: 1;
+        margin-bottom: 5px;
+        span {color: $asset;}
+      }
+    }
+    .status-inet {
+      @include light;
+      margin: 0 0 15px;
+      background-color: $asset;
+      color: $white;
+      font-size: 12px;
+      line-height: 14px;
+      text-align: center;
+      padding: 8px 0 5px;
+    }
+    .header-loop {
+      text-align: center;
+      margin-bottom: 5px;
+    }
+    .loop-status {
+      background-color: $white;
+      padding: 8px;
+      margin-bottom: 10px;
+      li {
+        @include left;
+        margin: 0;
+        width: 33%;
+        text-align: center;
+        color: $asset;
+      }
+    }
   }
 }
 
@@ -408,10 +471,30 @@ body {
   @include radius;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
 }
-
 .modal-body {
   padding: 20px;
-  h4 {margin: 10px 0 30px;}
+  button.close {
+    opacity: .5;
+    width: 25px;
+    height: 25px;
+    line-height: 22px;
+    background-color: $black;
+    border-radius: 50px;
+    color: $white;
+    text-shadow: none;
+    &:hover {opacity: .7;}
+  }
+  .title-modal {
+    h4 {
+      font-size: 14px;
+      margin: 10px 0 10px;
+    }
+    h2 {
+      font-size: 25px;
+      margin: 0 0 20px;
+    }
+    .icon img {margin-top: -5px;}
+  }
   .close-window {
     margin: 0;
     text-align: right;
@@ -440,54 +523,96 @@ body {
       margin-bottom: 5px;
     }
   }
+  .form-group {
+    margin: 0;
+    input[type=text], input[type=email] {
+      width: 90%;
+    }
+    .float-input {margin-bottom: 15px;}
+    .icons {
+      margin-left: 8px;
+      margin-top: 12px;
+      width: 12px;
+    }
+    .legend {font-size: 12px;}
+    .btn-save {
+      width: 50%;
+      margin-top: 15px;
+      background: $asset url('../images/arrow.jpg') no-repeat center right;
+    }
+  }
 }
+
+/* Checkbox */
+.checkbox-loop {
+  margin-bottom: 10px;
+  .bar-progress {
+    float: left;
+    width: 75%;
+  }
+  strong {
+    float: left;
+    width: 10%;
+    margin-top: 5px;
+    margin-left: 5%;
+  }
+  label {
+    float: left;
+    width: 5%;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 5%;
+    font-size: 16px;
+    margin-top: 5px;
+    &:before {
+      content:"";
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background-color: $white;
+      border: 2px solid $ribbon;
+      box-shadow: inset 0px 2px 3px 0px rgba(0, 0, 0, .3), 0px 1px 0px 0px rgba(255, 255, 255, .8);
+      border-radius: 3px;
+    }
+  }
+  input[type=checkbox] {
+    display: none;
+  }
+  input[type=checkbox]:checked + label:before {
+    content:"\2713";
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, .2);
+    font-size: 16px;
+    color: #333;
+    text-align: center;
+    line-height: 20px;
+  }
+}
+
 
 
 /* Media queries */
 @media (min-width: $screen-xs-min) {
    /* rules for mobile horizontal (480 > 768)  */
-   .buttons-config .btn{margin: 0 1em;}
 }
 @media (min-width: $screen-sm-min) {
    /* rules for tablet (768 > 992) */
-  #box .header {
-    h3 {text-align: left;}
-  }
-  .buttons-config .btn{margin: 0 1.5em;}
 }
 @media (min-width: $screen-md-min) {
    /* rules for desktop (992 > 1200) */
-  .intro-login {
-    padding: 2em 0 1em;
-    h3 {font-size: 30px;}
-    h4 {font-size: 20px;}
+  .modal-body .form-group {
+    margin-right: 10px;
+    .header-form {height: 50px;}
   }
-  .status {
-    margin-top: 1em;
-    min-height: 100px;
-    .icon {height: 100px;}
-  }
-  .bags-box {
-    // height: 600px;
-    .col-lg-6:first-child{
-      min-height: 485px;
-      border-right: 1px solid $ccc;
-      border-bottom: 0px solid transparent;
-      margin-bottom: 0;
-      padding-bottom: 0;
-    }
-    .bags-resume {
-      // width: 100%;
-      // position: absolute;
-      // bottom: 0;
-      .right {
-        // @include right;
-        // margin-right: 40px;
-      }
-    }
+  #plan-status .popover.popover-bag {width: 350px;}
+  #plan-status .box {height: 450px;}
+  #plan-status .panel, #bag-list .panel {
+    position: absolute;
+    width: 94%;
+    margin: 0 3%;
   }
 }
 @media (min-width: $screen-lg-min) {
    /* rules for large (> 1200) */
+
 }
 

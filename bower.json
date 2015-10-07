@@ -4,7 +4,8 @@
   "dependencies": {
     "bootstrap-sass": "~3.3.5",
     "modernizr": "~2.8.1",
-    "animate.css": "~3.4.0"
+    "animate.css": "~3.4.0",
+    "bootstrap-popover-x": "~1.4.1"
   },
   "overrides": {
     "bootstrap-sass": {
