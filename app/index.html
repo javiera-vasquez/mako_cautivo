@@ -12,6 +12,7 @@
     <!-- build:css styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/animate.css/animate.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap-popover-x/css/bootstrap-popover-x.min.css" />
     <!-- endbower -->
     <!-- endbuild -->
 
@@ -42,10 +43,7 @@
                 <a href="#" class="btn btn-vtr">Seguir a VTR.com <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></a>
               </div>
             </div>
-
-            <div id="ribbon" class="clearfix">
-              <a href="#" class="modal-config-open right"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Configuración</a>
-            </div>
+            <div id="ribbon" class="clearfix"></div>
 
           </div>
         </div>
@@ -99,6 +97,7 @@
                     <div class="pull-right"><strong>10Mbps</strong></div>
                   </li>
                 </ul>
+                <a class="modal-config-open"><img src="../images/config.jpg"></a>
                 <div class="panel panel-default">
                   <div class="panel-body">
                     Cuando se acaba la cuota de tu plan la velocidad baja de <strong>Máxima a Mínima</strong>. Debes contratar una bolsa para que vuelva al estado Máximo.
@@ -141,7 +140,43 @@
                 </div>
 
                 <div class="user-info">
-                  <h5>Plan Banda Ancha Fijo</h5>
+                  <h5>
+                    <a class="" data-toggle="popover-x" data-target="#bag-info" data-placement="bottom">Bolsa para Plan 1 Mes - 3GB</a>
+                  </h5>
+
+                  <div id="bag-info" class="popover popover-info">
+                    <div class="arrow"></div>
+                      <h3 class="popover-title">
+                        <span class="close" data-dismiss="popover-x">&times;</span>
+                        Bolsa para Plan 1 Mes - 3GB
+                      </h3>
+                    <div class="popover-content">
+                      <ul class="">
+                        <li>Estado: <span>Consumiéndose.</span></li>
+                        <li>Valor: <strong>$13.990</strong> por 30 días</li>
+                      </ul>
+                      <h5 class="status-inet">Velocidad de Bajada<br />Medición 2º Trimestre 2015</h4>
+                      <p class="header-loop">Local</p>
+                      <ul class="clearfix loop-status">
+                        <li>Max.<br />44,49</li>
+                        <li>Prom.<br />40,49</li>
+                        <li>Min.<br />26,65</li>
+                      </ul>
+                      <p class="header-loop">Nacional</p>
+                      <ul class="clearfix loop-status">
+                        <li>Max.<br />44,49</li>
+                        <li>Prom.<br />40,49</li>
+                        <li>Min.<br />26,65</li>
+                      </ul>
+                      <p class="header-loop">Internacional</p>
+                      <ul class="clearfix loop-status">
+                        <li>Max.<br />44,49</li>
+                        <li>Prom.<br />40,49</li>
+                        <li>Min.<br />26,65</li>
+                      </ul>
+                    </div>
+                  </div>
+
                   <div class="row">
                     <div class="col-xs-12 col-sm-6 col-md-6 col-lg-7">
                     <div class="bar-progress">
@@ -159,10 +194,36 @@
                   <p class="legend">(Consumiéndose)</p>
                 </div>
 
-                <h5>Ver todas las Bolsas contratadas en el mes</h5>
+                <p><a class="" data-toggle="popover-x" data-target="#bag-history" data-placement="bottom">Ver todas las Bolsas contratadas en el mes</a></p>
 
-                <!-- Button to launch modal popover -->
-                <a data-target="#popupBottom" role="button" class="btn" data-toggle="modal-popover" data-placement="bottom">Bottom</a>
+                <div id="bag-history" class="popover popover-bag">
+                  <div class="arrow"></div>
+                    <h3 class="popover-title">
+                      <span class="close" data-dismiss="popover-x">&times;</span>
+                      Bolsas contratadas en Septiembre
+                    </h3>
+                  <div class="popover-content">
+                    <div class="bag-loop">
+                      <h5>Bolsa: 1 Mes - 3GB</h5>
+                      <ul>
+                        <li>Valor: $13.990.</li>
+                        <li>Fecha de compra: 01 de septiembre.</li>
+                        <li>Fecha de vencimiento: 01 de octubre.</li>
+                        <li>Estado: <span>Consumiéndose.</span></li>
+                      </ul>
+                    </div>
+                    <div class="bag-loop">
+                      <h5>Bolsa: 1 Mes - 3GB</h5>
+                      <ul>
+                        <li>Valor: $13.990.</li>
+                        <li>Fecha de compra: 01 de septiembre.</li>
+                        <li>Fecha de vencimiento: 01 de octubre.</li>
+                        <li>Estado: <span>Consumiéndose.</span></li>
+                      </ul>
+                    </div>
+                    <a class="modal-purchase-open">Ver historial completo de Bolsas contratadas</a>
+                  </div>
+                </div>
 
                 <div class="panel panel-default">
                   <div class="panel-body">
@@ -207,7 +268,7 @@
                 <p class="bag"><img class="img-responsive" src="../images/bag.png"></p>
                 <p class="legend">Vigencia: 30 días</p>
                 <h3>$3.990</h3>
-                <button type="button" class="btn btn-default">¡La quiero!</button>
+                <p class="text-center"><a class="modal-login buy"><img  src="../images/buy.jpg"></a></p>
               </div>
             </div>
             <!-- end bag -->
@@ -218,7 +279,7 @@
                 <p class="bag"><img class="img-responsive" src="../images/bag.png"></p>
                 <p class="legend">Vigencia: 30 días</p>
                 <h3>$3.990</h3>
-                <button type="button" class="btn btn-default">¡La quiero!</button>
+                <p class="text-center"><a class="modal-login buy"><img  src="../images/buy.jpg"></a></p>
               </div>
             </div>
             <!-- end bag -->
@@ -229,7 +290,7 @@
                 <p class="bag"><img class="img-responsive" src="../images/bag.png"></p>
                 <p class="legend">Vigencia: 30 días</p>
                 <h3>$3.990</h3>
-                <button type="button" class="btn btn-default">¡La quiero!</button>
+                <p class="text-center"><a class="modal-login buy"><img  src="../images/buy.jpg"></a></p>
               </div>
             </div>
             <!-- end bag -->
@@ -240,7 +301,7 @@
                 <p class="bag"><img class="img-responsive" src="../images/bag.png"></p>
                 <p class="legend">Vigencia: 30 días</p>
                 <h3>$3.990</h3>
-                <button type="button" class="btn btn-default">¡La quiero!</button>
+                <p class="text-center"><a class="modal-login buy"><img  src="../images/buy.jpg"></a></p>
               </div>
             </div>
             <!-- end bag -->
@@ -254,62 +315,83 @@
     </div>
     <!-- end container -->
 
-    <!-- Define content -->
-    <div id="popupBottom" class="popover">
-        <div class="arrow"></div>
-        <h3 class="popover-title">Bottom</h3>
-        <div class="popover-content">
-            <p>Sed posuere consectetur est at lobortis. Aenean eu leo quam.
-                Pellentesque ornare sem lacinia quam venenatis vestibulum.
-                <a href="#" class="btn helloWorld">Click me</a>
-            </p>
-        </div>
-    </div>
-
     <!-- modal windows for config panel -->
     <div id="config-modal" class="modal fade">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-body">
 
-            <h4>Configuración</h4>
-            <div class="config-panel">
-              <form class="form-horizontal">
-                <div class="form-group">
-                  <label for="inputEmail3" class="col-sm-5 control-label">Email</label>
-                  <div class="col-sm-7">
-                    <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-                  </div>
-                </div>
-                <div class="form-group">
-                  <label for="inputPassword3" class="col-sm-6 control-label">Número de celular</label>
-                  <div class="col-sm-6">
-                    <input type="text" class="form-control" id="inputPassword3" placeholder="Número">
-                  </div>
-                </div>
-                <br>
-                <div class="form-group">
-                  <div class="col-sm-12">
-                    <p><strong>¿Cuándo quieres recibir notificaciones?</strong></p>
-                    <div class="checkbox">
-                      <label><input type="checkbox"> Al <strong>50%</strong> de mi cuota consumida.</label><br/>
-                      <label><input type="checkbox"> Al <strong>75%</strong> de mi cuota consumida.</label><br/>
-                      <label><input type="checkbox"> Al <strong>90%</strong> de mi cuota consumida.</label><br/>
-                      <label><input type="checkbox"> Al <strong>95%</strong> de mi cuota consumida.</label><br/>
-                      <label><input type="checkbox"> Al <strong>99%</strong> de mi cuota consumida.</label><br/>
-                      <label><input type="checkbox"> Al <strong>100%</strong> de mi cuota consumida.</label>
-                    </div>
-                    <p class="legend">Puedes seleccionar mas de una notificación</p>
-                  </div>
-                </div>
-              </form>
+            <div class="row title-modal">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4>Estado de tu Plan</h4>
+                <h2 class="icon"><img src="../images/sound.jpg" class=""> Notificarme</h2>
+              </div>
             </div>
-            <!-- end config-panel -->
 
-            <p class="buttons-config">
-              <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-              <button type="button" class="btn btn-go">Guardar</button>
-            </p>
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                <div class="form-group">
+                  <p class="header-form">Solicita una notificación cuando el consumo de tu cuota alcance el porcentaje:</p>
+                  <div class="checkbox-loop clearfix">
+                    <input id="check1" type="checkbox" name="check" value="check1">
+                    <label for="check1"></label>
+                    <div class="bar-progress dinamic-gradient">
+                      <div class="overflow gradient" style="width:50%"></div>
+                      <div class="progress-bar-base" role="progressbar"></div>
+                    </div>
+                    <strong>50%</strong>
+                  </div>
+
+                  <div class="checkbox-loop clearfix">
+                    <input id="check2" type="checkbox" name="check" value="check1">
+                    <label for="check2"></label>
+                    <div class="bar-progress dinamic-gradient">
+                      <div class="overflow gradient" style="width:75%"></div>
+                      <div class="progress-bar-base" role="progressbar"></div>
+                    </div>
+                    <strong>75%</strong>
+                  </div>
+
+                  <div class="checkbox-loop clearfix">
+                    <input id="check3" type="checkbox" name="check" value="check1">
+                    <label for="check3"></label>
+                    <div class="bar-progress dinamic-gradient">
+                      <div class="overflow gradient" style="width:95%"></div>
+                      <div class="progress-bar-base" role="progressbar"></div>
+                    </div>
+                    <strong>95%</strong>
+                  </div>
+
+                  <div class="checkbox-loop clearfix">
+                    <input id="check4" type="checkbox" name="check" value="check1">
+                    <label for="check4"></label>
+                    <div class="bar-progress dinamic-gradient">
+                      <div class="overflow gradient" style="width:100%"></div>
+                      <div class="progress-bar-base" role="progressbar"></div>
+                    </div>
+                    <strong>100%</strong>
+                  </div>
+                  <p class="legend">(Puedes elegir más de una opción).</p>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+
+                <div class="form-group">
+                  <p class="header-form">Elige el medio de notificación:</p>
+                  <div class="float-input clearfix">
+                    <input type="email" class="form-control pull-left" id="" placeholder="mail@mail.com">
+                    <img src="../images/mail.jpg" class="icons pull-left">
+                  </div>
+                  <div class="float-input clearfix">
+                    <input type="text" class="form-control pull-left" id="" placeholder="Teléfono celular">
+                    <img src="../images/cel.jpg" class="icons pull-left">
+                  </div>
+                  <button type="button" class="btn btn-save">Guardar</button>
+                </div>
+
+              </div>
+            </div>
 
           </div>
         </div><!-- /.modal-content -->
@@ -381,16 +463,6 @@
       </div><!-- /.modal-dialog -->
     </div><!-- /.modal -->
 
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
@@ -410,10 +482,10 @@
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
     <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
+    <script src="/bower_components/bootstrap-popover-x/js/bootstrap-popover-x.js"></script>
     <!-- endbuild -->
 
     <!-- build:js scripts/main.js -->
-    <script src="scripts/bootstrap-modal-popover.js"></script>
     <script src="scripts/main.js"></script>
     <!-- endbuild -->
   </body>
