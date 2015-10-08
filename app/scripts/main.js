@@ -15,18 +15,18 @@ $(function () {
 	// Modal for config panel
 	$('.modal-config-open').on('click', function(){
 		$('#config-modal').modal();
-		$('#config-modal').on('shown.bs.modal', function (e) {
+		$('#config-modal').on('shown.bs.modal', function () {
 			// Resize and set width of all progress bar
 			$('.dinamic-gradient').each(function(){
 				var width = $(this).width();
 				$(this).children('.gradient').css('background-size', width);
 			});
-		})
+		});
 	});
 	// Modal for history of purchase
 	$('.modal-purchase-open').on('click', function(){
 		$('#purchase-modal').modal();
-		$("#bag-history").popoverX("hide");
+		$('#bag-history').popoverX('hide');
 	});
 });
 
